@@ -1,0 +1,69 @@
+#include<stdlib.h>
+#include<string>
+#include<iostream>
+
+using namespace std;
+
+int GTZcounter(int in)
+{
+	int GTZout = 0;
+	for (int i = 0; i < in; i++)
+	{
+		GTZout++;
+	}
+	return GTZout;
+}
+
+int LTZcounter(int inp)
+{
+	int LTZout = 0;
+	for (int i = inp; i < 0; i++)
+	{
+		LTZout++;
+	}
+	return LTZout;
+}
+
+
+int main()
+{
+	int input;
+	bool ynflag;
+	string ansyn;
+
+	do
+	{
+		cout << "Please input a number to recieve its absolute value\n";
+		cin >> input;
+
+		if (input > 0)
+		{
+			cout << GTZcounter(input) << endl << "Would you like to continue?\n";
+			cin >> ansyn;
+			if (ansyn == "yes")
+			{
+				ynflag = true;
+			}
+			else
+			{
+				ynflag = false;
+			}
+		}
+		else
+		{
+			cout << LTZcounter(input) << endl << "Would you like to continue?\n";
+			cin >> ansyn;
+			if (ansyn == "yes")
+			{
+				ynflag = true;
+			}
+			else
+			{
+				ynflag = false;
+			}
+		}
+	} while (ynflag == true);
+
+	system("pause");
+	return 0;
+}
