@@ -1,0 +1,50 @@
+#include<stdlib.h>
+#include<string>
+#include<iostream>
+
+using namespace std;
+int main()
+{
+	int inputint;
+	string answer;
+	bool ynflag;
+
+	do 
+	{
+		cout << "Please enter an integer\n";
+		cin >> inputint;
+
+		if (inputint % 2 == 0)
+		{
+			cout << "Integer is Even, want to input again?\n";
+			cin >> answer;
+			if (answer == "yes")
+			{
+				ynflag = true;
+			}
+			else
+			{
+				ynflag = false;
+			}
+		}
+		else
+		{
+			cout << "Integer is Odd, want to input again?\n";
+			cin >> answer;
+
+			if (answer == "yes")
+			{
+				ynflag = true;
+			}
+			else
+			{
+				ynflag = false;
+			}
+		}
+		
+	}
+	while (ynflag == true);
+	
+	system("pause");
+	return 0;
+}
