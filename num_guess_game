@@ -1,0 +1,49 @@
+#include<stdlib.h> 
+#include<string> 
+#include<iostream> 
+#include<cmath>
+#include<ctime>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	int guess;
+	int RN;
+	string YNans;
+	string upperVer;
+	bool continueFlag = true;
+
+
+	RN = rand() % 100 + 1;
+	cout << "Please guess a number 1-100\n";
+	do {
+		cin >> guess;
+		if (guess > RN) {
+			cout << "Input too high\n";
+		}
+		else if (guess < RN) {
+			cout << "Input too low\n";
+		}
+		else if (guess == RN) {
+			cout << "Correct!\n" << "Want to play again?\n";
+			cin >> YNans;
+			transform(YNans.begin(), YNans.end(), YNans.begin(), ::toupper);
+
+			if (YNans == "NO") {
+				continueFlag = false;
+			}
+			else if (YNans == "YES") {
+				cout << "Please guess a number 1-100\n";
+				RN = rand() % 100 + 1;
+			}
+
+		}
+
+	} while (continueFlag == true);
+	
+	system("pause");
+	return 0;
+}
